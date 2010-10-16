@@ -1,0 +1,1270 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxFrame" name="workinprogressFrame">
+		<title>yaku</title>
+		<centered>1</centered>
+		<icon>icon.png</icon>
+		<size>760,694</size>
+		<minsize>760,694</minsize>
+		<maxsize>760,694</maxsize>
+		<id_arg>0</id_arg>
+		<style>wxCAPTION|wxSYSTEM_MENU|wxCLOSE_BOX|wxCLIP_CHILDREN</style>
+		<object class="wxPanel" name="ID_PANEL1" variable="fm_panel" member="yes">
+			<size>752,744</size>
+			<object class="wxNotebook" name="ID_NOTEBOOK1" variable="nb_main" member="yes">
+				<size>752,624</size>
+				<style>wxNB_BOTTOM</style>
+				<handler function="Onnb_mainPageChanged" entry="EVT_NOTEBOOK_PAGE_CHANGED" />
+				<object class="notebookpage">
+					<object class="wxPanel" name="ID_PANEL2" variable="pl_welcome" member="yes">
+						<object class="wxPanel" name="ID_PANEL8" variable="Panel2" member="yes">
+							<size>736,592</size>
+							<object class="wxStaticText" name="ID_STATICTEXT37" variable="StaticText36" member="yes">
+								<label>Welcome to Yaku</label>
+								<pos>16,16</pos>
+								<font>
+									<size>16</size>
+									<style>normal</style>
+									<weight>normal</weight>
+									<underlined>0</underlined>
+									<family>swiss</family>
+									<face>Arial</face>
+								</font>
+							</object>
+							<object class="wxHtmlWindow" name="ID_HTMLWINDOW3" variable="HtmlWindow1" member="yes">
+								<htmlcode>&lt;p&gt;Yaku is a software for burning firmware or bootloader on AVR. It is also a gui for AVRDUDE. Hopefully, people like you will use it to share their work (firmware or bootloader). For now, there&apos;s 2 bootloader (USB, Ethernet) and 2 firmware (USB template, Ethernet WWW Server) for ATMEGA644P. To begin, select a panel below.&lt;/p&gt;&#x0A;&lt;p&gt;&lt;a href=&quot;http://www.workinprogress.ca/yaku/contact.php&quot;&gt;Found a bug, have a suggestion?&lt;/a&gt;&lt;/p&gt;</htmlcode>
+								<pos>16,48</pos>
+								<size>712,104</size>
+								<style>wxHW_SCROLLBAR_NEVER|wxSIMPLE_BORDER|wxTRANSPARENT_WINDOW</style>
+							</object>
+							<object class="wxStaticBitmap" name="ID_STATICBITMAP1" variable="StaticBitmap1" member="yes">
+								<bitmap>C:\Documents and Settings\pat\My Documents\wxwidgets\workinprogress\yaku.jpg</bitmap>
+								<pos>16,120</pos>
+							</object>
+						</object>
+					</object>
+					<label>   welcome   </label>
+				</object>
+				<object class="notebookpage">
+					<object class="wxPanel" name="ID_PANEL3" variable="pl_avrdude" member="yes">
+						<object class="wxPanel" name="ID_PANEL16" variable="Panel7" member="yes">
+							<object class="wxBoxSizer" variable="BoxSizer35" member="no">
+								<orient>wxVERTICAL</orient>
+								<object class="sizeritem">
+									<object class="wxStaticBoxSizer" variable="StaticBoxSizer1" member="no">
+										<label>Flash</label>
+										<object class="sizeritem">
+											<object class="wxTextCtrl" name="ID_TEXTCTRL10" variable="tc_ad_flash" member="yes">
+												<size>638,21</size>
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxButton" name="ID_BUTTON13" variable="b_ad_flash" member="yes">
+												<label>...</label>
+												<size>35,23</size>
+												<handler function="Onb_ad_flashClick" entry="EVT_BUTTON" />
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+										</object>
+									</object>
+									<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+									<option>1</option>
+								</object>
+								<object class="sizeritem">
+									<object class="wxStaticBoxSizer" variable="StaticBoxSizer2" member="no">
+										<label>EEPROM</label>
+										<object class="sizeritem">
+											<object class="wxTextCtrl" name="ID_TEXTCTRL11" variable="tc_ad_eeprom" member="yes">
+												<size>638,21</size>
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxButton" name="ID_BUTTON14" variable="b_ad_eeprom" member="yes">
+												<label>...</label>
+												<size>35,23</size>
+												<handler function="Onb_ad_eepromClick" entry="EVT_BUTTON" />
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+										</object>
+									</object>
+									<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+									<option>1</option>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBoxSizer" variable="BoxSizer36" member="no">
+										<object class="sizeritem">
+											<object class="wxBoxSizer" variable="BoxSizer37" member="no">
+												<orient>wxVERTICAL</orient>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT27" variable="StaticText27" member="yes">
+														<label>Device (-p):</label>
+													</object>
+													<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxChoice" name="ID_CHOICE6" variable="c_ad_device" member="yes">
+														<handler function="Onc_ad_deviceSelect" entry="EVT_CHOICE" />
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<option>1</option>
+												</object>
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<option>1</option>
+										</object>
+										<object class="sizeritem">
+											<object class="wxBoxSizer" variable="BoxSizer38" member="no">
+												<orient>wxVERTICAL</orient>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT28" variable="StaticText28" member="yes">
+														<label>Programmer (-c):</label>
+													</object>
+													<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxChoice" name="ID_CHOICE7" variable="c_ad_programmer" member="yes">
+														<handler function="Onc_ad_programmerSelect" entry="EVT_CHOICE" />
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<option>1</option>
+												</object>
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+											<option>1</option>
+										</object>
+										<object class="sizeritem">
+											<object class="wxBoxSizer" variable="BoxSizer39" member="no">
+												<orient>wxVERTICAL</orient>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT29" variable="StaticText29" member="yes">
+														<label>Port (-P):</label>
+													</object>
+													<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxChoice" name="ID_CHOICE8" variable="c_ad_port" member="yes">
+														<content>
+															<item>usb</item>
+															<item>lpt1</item>
+															<item>lpt2</item>
+															<item>lpt3</item>
+															<item>com1</item>
+															<item>com2</item>
+															<item>com3</item>
+															<item>com4</item>
+															<item>com5</item>
+															<item>com6</item>
+															<item>com7</item>
+															<item>com8</item>
+															<item>com9</item>
+															<item>com10</item>
+														</content>
+														<handler function="Onc_ad_portSelect" entry="EVT_CHOICE" />
+													</object>
+													<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<option>1</option>
+												</object>
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+											<option>1</option>
+										</object>
+									</object>
+									<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBoxSizer" variable="BoxSizer40" member="no">
+										<object class="sizeritem">
+											<object class="wxStaticBoxSizer" variable="StaticBoxSizer3" member="no">
+												<label>Low Fuse</label>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT30" variable="StaticText30" member="yes">
+														<label>0x</label>
+													</object>
+													<flag>wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>1</border>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="ID_TEXTCTRL12" variable="tc_low" member="yes">
+														<maxlength>2</maxlength>
+														<size>31,21</size>
+														<handler function="Ontc_lowText" entry="EVT_TEXT" />
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>1</border>
+												</object>
+												<object class="spacer">
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+													<size>28,20</size>
+												</object>
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxStaticBoxSizer" variable="StaticBoxSizer4" member="no">
+												<label>High Fuse</label>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT31" variable="StaticText31" member="yes">
+														<label>0x</label>
+													</object>
+													<flag>wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>1</border>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="ID_TEXTCTRL13" variable="tc_high" member="yes">
+														<maxlength>2</maxlength>
+														<size>31,21</size>
+														<handler function="Ontc_highText" entry="EVT_TEXT" />
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>1</border>
+												</object>
+												<object class="spacer">
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+													<size>29,20</size>
+												</object>
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxStaticBoxSizer" variable="StaticBoxSizer5" member="no">
+												<label>Extended Fuse</label>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT32" variable="StaticText32" member="yes">
+														<label>0x</label>
+													</object>
+													<flag>wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>1</border>
+												</object>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="ID_TEXTCTRL14" variable="tc_extended" member="yes">
+														<maxlength>2</maxlength>
+														<size>31,21</size>
+														<handler function="Ontc_extendedText" entry="EVT_TEXT" />
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>1</border>
+												</object>
+												<object class="spacer">
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+													<size>48,20</size>
+												</object>
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxButton" name="ID_BUTTON17" variable="b_fuses" member="yes">
+												<label>Read fuses</label>
+												<handler function="Onb_fusesClick" entry="EVT_BUTTON" />
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+											<option>1</option>
+										</object>
+										<object class="sizeritem">
+											<object class="wxButton" name="ID_BUTTON18" variable="b_fuse_calculator" member="yes">
+												<label>Fuse Calculator</label>
+												<handler function="Onb_fuse_calculatorClick" entry="EVT_BUTTON" />
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+											<option>1</option>
+										</object>
+									</object>
+									<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+									<option>1</option>
+								</object>
+								<object class="sizeritem">
+									<object class="wxStaticBoxSizer" variable="StaticBoxSizer6" member="no">
+										<label>Options</label>
+										<object class="sizeritem">
+											<object class="wxCheckBox" name="ID_CHECKBOX3" variable="cb_d" member="yes">
+												<label>Disable auto erase for flash (-D)</label>
+												<handler function="Oncb_dClick" entry="EVT_CHECKBOX" />
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxCheckBox" name="ID_CHECKBOX4" variable="cb_e" member="yes">
+												<label>Perform a chip erase (-e)</label>
+												<handler function="Oncb_eClick" entry="EVT_CHECKBOX" />
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxCheckBox" name="ID_CHECKBOX5" variable="cb_v" member="yes">
+												<label>Disable verify check (-V)</label>
+												<handler function="Oncb_vClick" entry="EVT_CHECKBOX" />
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+										</object>
+									</object>
+									<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+									<option>1</option>
+								</object>
+								<object class="sizeritem">
+									<object class="wxStaticText" name="ID_STATICTEXT33" variable="StaticText33" member="yes">
+										<label>Command line:</label>
+									</object>
+									<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBoxSizer" variable="BoxSizer41" member="no">
+										<object class="sizeritem">
+											<object class="wxTextCtrl" name="ID_TEXTCTRL15" variable="tc_ad_command" member="yes">
+												<size>714,21</size>
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+											<option>1</option>
+										</object>
+									</object>
+									<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+								</object>
+								<object class="sizeritem">
+									<object class="wxStaticText" name="ID_STATICTEXT34" variable="StaticText34" member="yes">
+										<label>Log</label>
+									</object>
+									<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+								</object>
+								<object class="sizeritem">
+									<object class="wxListBox" name="ID_LISTBOX3" variable="m_lbox_ad" member="yes">
+										<default>-1</default>
+										<size>715,159</size>
+										<style>wxLB_HSCROLL</style>
+									</object>
+									<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBoxSizer" variable="BoxSizer42" member="no">
+										<object class="sizeritem">
+											<object class="wxStaticText" name="ID_STATICTEXT36" variable="st_note" member="yes">
+												<label></label>
+												<size>494,13</size>
+												<font>
+													<size>9</size>
+													<style>normal</style>
+													<weight>normal</weight>
+													<underlined>0</underlined>
+													<family>swiss</family>
+													<face>Arial</face>
+												</font>
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxButton" name="ID_BUTTON16" variable="b_fetch" member="yes">
+												<label>Hardware information</label>
+												<handler function="Onb_fetchClick" entry="EVT_BUTTON" />
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxButton" name="ID_BUTTON15" variable="b_ad_execute" member="yes">
+												<label>Execute</label>
+												<fg>wxSYS_COLOUR_HIGHLIGHTTEXT</fg>
+												<bg>wxSYS_COLOUR_3DDKSHADOW</bg>
+												<handler function="Onb_ad_executeClick" entry="EVT_BUTTON" />
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+										</object>
+									</object>
+									<flag>wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+								</object>
+							</object>
+						</object>
+					</object>
+					<label>   avrdude   </label>
+				</object>
+				<object class="notebookpage">
+					<object class="wxPanel" name="ID_PANEL4" variable="pl_firmware" member="yes">
+						<size>632,732</size>
+						<object class="wxPanel" name="ID_PANEL7" variable="Panel6" member="yes">
+							<size>640,410</size>
+							<object class="wxBoxSizer" variable="BoxSizer1" member="no">
+								<orient>wxVERTICAL</orient>
+								<object class="sizeritem">
+									<object class="wxNotebook" name="ID_NOTEBOOK_FIRM" variable="nb_via" member="yes">
+										<size>449,182</size>
+										<style>wxNB_BOTTOM</style>
+										<handler function="Onnb_viaPageChanged" entry="EVT_NOTEBOOK_PAGE_CHANGED" />
+										<object class="notebookpage">
+											<object class="wxPanel" name="ID_PANEL5" variable="pn_usb" member="yes">
+												<size>366,156</size>
+												<object class="wxPanel" name="ID_PANEL11" variable="Panel4" member="yes">
+													<size>488,168</size>
+													<object class="wxBoxSizer" variable="BoxSizer18" member="no">
+														<orient>wxVERTICAL</orient>
+														<object class="sizeritem">
+															<object class="wxBoxSizer" variable="BoxSizer23" member="no">
+																<object class="sizeritem">
+																	<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
+																		<label>Program via USB</label>
+																		<font>
+																			<size>10</size>
+																			<style>normal</style>
+																			<weight>bold</weight>
+																			<underlined>0</underlined>
+																			<family>swiss</family>
+																		</font>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																</object>
+																<object class="sizeritem">
+																	<object class="wxStaticText" name="ID_STATICTEXT18" variable="StaticText18" member="yes">
+																		<label>(if you have the USB/HID Bootloader)</label>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																</object>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+														</object>
+														<object class="sizeritem">
+															<object class="wxBoxSizer" variable="BoxSizer19" member="no">
+																<object class="sizeritem">
+																	<object class="wxStaticText" name="ID_STATICTEXT2" variable="StaticText2" member="yes">
+																		<label>Vendor ID:</label>
+																		<size>72,13</size>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																	<option>1</option>
+																</object>
+																<object class="sizeritem">
+																	<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="tc_vendor_id" member="yes">
+																		<value>0x16c0</value>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																	<option>1</option>
+																</object>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+														</object>
+														<object class="sizeritem">
+															<object class="wxBoxSizer" variable="BoxSizer4" member="no">
+																<object class="sizeritem">
+																	<object class="wxStaticText" name="ID_STATICTEXT3" variable="StaticText3" member="yes">
+																		<label>Vendor string:</label>
+																		<size>72,13</size>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																	<option>1</option>
+																</object>
+																<object class="sizeritem">
+																	<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="tc_vendor_string" member="yes">
+																		<value>obdev.at</value>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																	<option>1</option>
+																</object>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+														</object>
+														<object class="sizeritem">
+															<object class="wxBoxSizer" variable="BoxSizer5" member="no">
+																<object class="sizeritem">
+																	<object class="wxStaticText" name="ID_STATICTEXT4" variable="StaticText4" member="yes">
+																		<label>Product ID:</label>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																	<option>1</option>
+																</object>
+																<object class="sizeritem">
+																	<object class="wxTextCtrl" name="ID_TEXTCTRL3" variable="tc_product_id" member="yes">
+																		<value>0x05df</value>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																	<option>1</option>
+																</object>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+														</object>
+														<object class="sizeritem">
+															<object class="wxBoxSizer" variable="BoxSizer6" member="no">
+																<object class="sizeritem">
+																	<object class="wxStaticText" name="ID_STATICTEXT5" variable="StaticText5" member="yes">
+																		<label>Product string:</label>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																	<option>1</option>
+																</object>
+																<object class="sizeritem">
+																	<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="tc_product_string" member="yes">
+																		<value>HIDBoot</value>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																	<option>1</option>
+																</object>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+														</object>
+													</object>
+												</object>
+											</object>
+											<label>   via USB   </label>
+										</object>
+										<object class="notebookpage">
+											<object class="wxPanel" name="ID_PANEL10" variable="pn_ethernet" member="yes">
+												<object class="wxPanel" name="ID_PANEL12" variable="Panel1" member="yes">
+													<size>488,168</size>
+													<object class="wxBoxSizer" variable="BoxSizer3" member="no">
+														<orient>wxVERTICAL</orient>
+														<object class="sizeritem">
+															<object class="wxBoxSizer" variable="BoxSizer24" member="no">
+																<object class="sizeritem">
+																	<object class="wxStaticText" name="ID_STATICTEXT14" variable="StaticText14" member="yes">
+																		<label>Program via ETHERNET</label>
+																		<font>
+																			<size>10</size>
+																			<style>normal</style>
+																			<weight>bold</weight>
+																			<underlined>0</underlined>
+																			<family>swiss</family>
+																		</font>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																</object>
+																<object class="sizeritem">
+																	<object class="wxStaticText" name="ID_STATICTEXT19" variable="StaticText19" member="yes">
+																		<label>(if you have the ETHERNET/UDP Bootloader)</label>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																</object>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+															<option>1</option>
+														</object>
+														<object class="sizeritem">
+															<object class="wxBoxSizer" variable="BoxSizer20" member="no">
+																<object class="sizeritem">
+																	<object class="wxStaticText" name="ID_STATICTEXT15" variable="StaticText15" member="yes">
+																		<label>Device IP:</label>
+																		<size>72,13</size>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																	<option>1</option>
+																</object>
+																<object class="sizeritem">
+																	<object class="wxTextCtrl" name="ID_TEXTCTRL6" variable="tc_ip" member="yes">
+																		<value>192.168.1.253</value>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																	<option>1</option>
+																</object>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+														</object>
+														<object class="sizeritem">
+															<object class="wxBoxSizer" variable="BoxSizer21" member="no">
+																<object class="sizeritem">
+																	<object class="wxStaticText" name="ID_STATICTEXT16" variable="StaticText16" member="yes">
+																		<label>Device UDP Port:</label>
+																		<size>72,13</size>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																	<option>1</option>
+																</object>
+																<object class="sizeritem">
+																	<object class="wxTextCtrl" name="ID_TEXTCTRL7" variable="tc_device_port" member="yes">
+																		<value>3000</value>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																	<option>1</option>
+																</object>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+														</object>
+														<object class="sizeritem">
+															<object class="wxBoxSizer" variable="BoxSizer22" member="no">
+																<object class="sizeritem">
+																	<object class="wxStaticText" name="ID_STATICTEXT17" variable="StaticText17" member="yes">
+																		<label>Local UDP Port:</label>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																	<option>1</option>
+																</object>
+																<object class="sizeritem">
+																	<object class="wxTextCtrl" name="ID_TEXTCTRL8" variable="tc_local_port" member="yes">
+																		<value>3001</value>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																	<option>1</option>
+																</object>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+														</object>
+													</object>
+												</object>
+											</object>
+											<label>   via ETHERNET   </label>
+										</object>
+										<object class="notebookpage">
+											<object class="wxPanel" name="ID_PANEL13" variable="pn_avrdude" member="yes">
+												<object class="wxPanel" name="ID_PANEL14" variable="Panel5" member="yes">
+													<size>440,152</size>
+													<object class="wxBoxSizer" variable="BoxSizer43" member="no">
+														<object class="sizeritem">
+															<object class="wxStaticText" name="ID_STATICTEXT13" variable="StaticText13" member="yes">
+																<label>Program via AVRDUDE</label>
+																<font>
+																	<size>10</size>
+																	<style>normal</style>
+																	<weight>bold</weight>
+																	<underlined>0</underlined>
+																	<family>swiss</family>
+																</font>
+															</object>
+															<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+															<border>5</border>
+														</object>
+														<object class="sizeritem">
+															<object class="wxStaticText" name="ID_STATICTEXT20" variable="StaticText20" member="yes">
+																<label>(if you have a programmer)</label>
+															</object>
+															<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+															<border>5</border>
+														</object>
+													</object>
+												</object>
+												<object class="wxStaticText" name="ID_STATICTEXT35" variable="StaticText35" member="yes">
+													<label>Will use the AVRDUDE panel when you click Program</label>
+													<pos>8,32</pos>
+												</object>
+											</object>
+											<label>   via AVRDUDE   </label>
+										</object>
+									</object>
+									<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+									<option>1</option>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBoxSizer" variable="BoxSizer2" member="no">
+										<orient>wxVERTICAL</orient>
+										<object class="sizeritem">
+											<object class="wxBoxSizer" variable="BoxSizer8" member="no">
+												<orient>wxVERTICAL</orient>
+												<object class="spacer">
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<size>20,1</size>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT6" variable="StaticText6" member="yes">
+														<label>Your firmware:</label>
+														<font>
+															<size>10</size>
+															<style>normal</style>
+															<weight>bold</weight>
+															<underlined>0</underlined>
+															<family>swiss</family>
+														</font>
+													</object>
+													<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+												</object>
+												<object class="sizeritem">
+													<object class="wxBoxSizer" variable="BoxSizer9" member="no">
+														<object class="sizeritem">
+															<object class="wxTextCtrl" name="ID_TEXTCTRL5" variable="tc_file" member="yes">
+																<size>648,21</size>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+															<border>5</border>
+															<option>1</option>
+														</object>
+														<object class="sizeritem">
+															<object class="wxButton" name="ID_BUTTON2" variable="b_open" member="yes">
+																<label>Open .hex</label>
+																<handler function="Onb_openClick" entry="EVT_BUTTON" />
+															</object>
+															<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+														</object>
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+												</object>
+												<object class="spacer">
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+													<size>20,1</size>
+												</object>
+											</object>
+											<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+										</object>
+										<object class="sizeritem">
+											<object class="wxBoxSizer" variable="BoxSizer10" member="no">
+												<orient>wxVERTICAL</orient>
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT7" variable="StaticText7" member="yes">
+														<label>Available firmware:</label>
+														<font>
+															<size>10</size>
+															<style>normal</style>
+															<weight>bold</weight>
+															<underlined>0</underlined>
+															<family>swiss</family>
+														</font>
+													</object>
+													<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxBoxSizer" variable="BoxSizer11" member="no">
+														<object class="sizeritem">
+															<object class="wxStaticText" name="ID_STATICTEXT8" variable="StaticText8" member="yes">
+																<label>Microcontroller:</label>
+																<size>100,13</size>
+															</object>
+															<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+															<border>5</border>
+														</object>
+														<object class="sizeritem">
+															<object class="wxChoice" name="ID_CHOICE1" variable="c_microcontroller" member="yes">
+																<handler function="Onc_microcontrollerSelect" entry="EVT_CHOICE" />
+															</object>
+															<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+															<border>5</border>
+															<option>1</option>
+														</object>
+													</object>
+													<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+												</object>
+												<object class="sizeritem">
+													<object class="wxBoxSizer" variable="BoxSizer12" member="no">
+														<object class="sizeritem">
+															<object class="wxStaticText" name="ID_STATICTEXT9" variable="StaticText9" member="yes">
+																<label>Category:</label>
+																<size>100,13</size>
+															</object>
+															<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+															<border>5</border>
+														</object>
+														<object class="sizeritem">
+															<object class="wxChoice" name="ID_CHOICE2" variable="c_category" member="yes">
+																<handler function="Onc_categorySelect" entry="EVT_CHOICE" />
+															</object>
+															<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+															<border>5</border>
+															<option>1</option>
+														</object>
+													</object>
+													<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+												</object>
+												<object class="sizeritem">
+													<object class="wxBoxSizer" variable="BoxSizer13" member="no">
+														<object class="sizeritem">
+															<object class="wxStaticText" name="ID_STATICTEXT10" variable="StaticText10" member="yes">
+																<label>Firmware:</label>
+																<size>100,13</size>
+															</object>
+															<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+															<border>5</border>
+														</object>
+														<object class="sizeritem">
+															<object class="wxChoice" name="ID_CHOICE3" variable="c_firmware" member="yes">
+																<handler function="Onc_firmwareSelect" entry="EVT_CHOICE" />
+															</object>
+															<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+															<border>5</border>
+															<option>1</option>
+														</object>
+													</object>
+													<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+												</object>
+											</object>
+											<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+										</object>
+										<object class="sizeritem">
+											<object class="wxBoxSizer" variable="BoxSizer7" member="no">
+												<object class="sizeritem">
+													<object class="wxBoxSizer" variable="BoxSizer14" member="no">
+														<orient>wxVERTICAL</orient>
+														<object class="sizeritem">
+															<object class="wxStaticText" name="ID_STATICTEXT11" variable="StaticText11" member="yes">
+																<label>Description:</label>
+																<font>
+																	<size>10</size>
+																	<style>normal</style>
+																	<weight>bold</weight>
+																	<underlined>0</underlined>
+																	<family>swiss</family>
+																</font>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+															<border>5</border>
+														</object>
+														<object class="sizeritem">
+															<object class="wxHtmlWindow" name="ID_HTMLWINDOW1" variable="html_description" member="yes">
+																<htmlcode>avr usb</htmlcode>
+																<borders>1</borders>
+																<size>360,130</size>
+																<style>wxHW_SCROLLBAR_AUTO|wxSIMPLE_BORDER</style>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+															<border>5</border>
+														</object>
+														<object class="sizeritem">
+															<object class="wxBoxSizer" variable="BoxSizer17" member="no">
+																<object class="sizeritem">
+																	<object class="wxButton" name="ID_BUTTON1" variable="b_source" member="yes">
+																		<label>Edit source</label>
+																		<enabled>0</enabled>
+																		<handler function="Onb_sourceClick" entry="EVT_BUTTON" />
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																</object>
+																<object class="sizeritem">
+																	<object class="wxButton" name="ID_BUTTON4" variable="b_make" member="yes">
+																		<label>Make</label>
+																		<enabled>0</enabled>
+																		<handler function="Onb_makeClick" entry="EVT_BUTTON" />
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																	<option>1</option>
+																</object>
+																<object class="sizeritem">
+																	<object class="wxButton" name="ID_BUTTON6" variable="b_clean" member="yes">
+																		<label>Clean</label>
+																		<enabled>0</enabled>
+																		<handler function="Onb_cleanClick" entry="EVT_BUTTON" />
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																	<option>1</option>
+																</object>
+																<object class="spacer">
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>1</border>
+																	<size>4,20</size>
+																</object>
+																<object class="sizeritem">
+																	<object class="wxButton" name="ID_BUTTON5" variable="b_info" member="yes">
+																		<label>More information</label>
+																		<handler function="Onb_infoClick" entry="EVT_BUTTON" />
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																</object>
+															</object>
+															<flag>wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+														</object>
+													</object>
+													<flag>wxALL|wxALIGN_LEFT|wxALIGN_TOP</flag>
+												</object>
+												<object class="sizeritem">
+													<object class="wxBoxSizer" variable="BoxSizer15" member="no">
+														<orient>wxVERTICAL</orient>
+														<object class="sizeritem">
+															<object class="wxStaticText" name="ID_STATICTEXT12" variable="StaticText12" member="yes">
+																<label>Log:</label>
+																<font>
+																	<size>10</size>
+																	<style>normal</style>
+																	<weight>bold</weight>
+																	<underlined>0</underlined>
+																	<family>swiss</family>
+																</font>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+															<border>5</border>
+														</object>
+														<object class="sizeritem">
+															<object class="wxListBox" name="ID_LISTBOX1" variable="m_lbox" member="yes">
+																<default>-1</default>
+																<size>360,130</size>
+																<style>wxLB_HSCROLL</style>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+															<border>5</border>
+														</object>
+														<object class="sizeritem">
+															<object class="wxBoxSizer" variable="BoxSizer16" member="no">
+																<object class="sizeritem">
+																	<object class="wxCheckBox" name="ID_CHECKBOX2" variable="cb_bootloader" member="yes">
+																		<label>Enter Bootloader [?]</label>
+																		<checked>1</checked>
+																		<tooltip>If your firmware support it, will try to enter bootloader from the firmware</tooltip>
+																		<help>If your firmware support it, will try to enter bootloader from the firmware</help>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																</object>
+																<object class="sizeritem">
+																	<object class="wxCheckBox" name="ID_CHECKBOX1" variable="cb_restart" member="yes">
+																		<label>Reset</label>
+																		<checked>1</checked>
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																</object>
+																<object class="sizeritem">
+																	<object class="wxButton" name="ID_BUTTON3" variable="b_program" member="yes">
+																		<label>Program</label>
+																		<enabled>0</enabled>
+																		<fg>wxSYS_COLOUR_HIGHLIGHTTEXT</fg>
+																		<bg>wxSYS_COLOUR_3DDKSHADOW</bg>
+																		<handler function="usb_program" entry="EVT_BUTTON" />
+																	</object>
+																	<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+																	<border>5</border>
+																	<option>1</option>
+																</object>
+															</object>
+															<flag>wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+															<option>1</option>
+														</object>
+													</object>
+													<flag>wxALL|wxALIGN_RIGHT|wxALIGN_TOP</flag>
+												</object>
+											</object>
+											<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+										</object>
+									</object>
+									<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+								</object>
+							</object>
+						</object>
+					</object>
+					<label>   firmware   </label>
+				</object>
+				<object class="notebookpage">
+					<object class="wxPanel" name="ID_PANEL6" variable="pl_bootloader" member="yes">
+						<object class="wxPanel" name="ID_PANEL15" variable="Panel3" member="yes">
+							<size>640,410</size>
+							<object class="wxBoxSizer" variable="BoxSizer25" member="no">
+								<orient>wxVERTICAL</orient>
+								<object class="sizeritem">
+									<object class="wxBoxSizer" variable="BoxSizer28" member="no">
+										<orient>wxVERTICAL</orient>
+										<object class="sizeritem">
+											<object class="wxStaticText" name="ID_STATICTEXT24" variable="StaticText24" member="yes">
+												<label>Your bootloader:</label>
+												<font>
+													<size>10</size>
+													<style>normal</style>
+													<weight>bold</weight>
+													<underlined>0</underlined>
+													<family>swiss</family>
+												</font>
+											</object>
+											<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxBoxSizer" variable="BoxSizer29" member="no">
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="ID_TEXTCTRL9" variable="tc_file_bootloader" member="yes">
+														<size>648,21</size>
+													</object>
+													<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxButton" name="ID_BUTTON7" variable="b_open_bootloader" member="yes">
+														<label>Open .hex</label>
+														<handler function="Onb_open_bootloaderClick" entry="EVT_BUTTON" />
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+												</object>
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+										</object>
+										<object class="spacer">
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+											<option>1</option>
+											<size>20,1</size>
+										</object>
+										<object class="sizeritem">
+											<object class="wxStaticText" name="ID_STATICTEXT23" variable="StaticText23" member="yes">
+												<label>Available bootloader:</label>
+												<font>
+													<size>10</size>
+													<style>normal</style>
+													<weight>bold</weight>
+													<underlined>0</underlined>
+													<family>swiss</family>
+												</font>
+											</object>
+											<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxBoxSizer" variable="BoxSizer26" member="no">
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT21" variable="StaticText21" member="yes">
+														<label>Microcontroller:</label>
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxChoice" name="ID_CHOICE4" variable="c_microcontroller_bootloader" member="yes">
+														<handler function="Onc_microcontroller_bootloaderSelect" entry="EVT_CHOICE" />
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+											</object>
+											<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+										</object>
+										<object class="sizeritem">
+											<object class="wxBoxSizer" variable="BoxSizer27" member="no">
+												<object class="sizeritem">
+													<object class="wxStaticText" name="ID_STATICTEXT22" variable="StaticText22" member="yes">
+														<label>Bootloader:</label>
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxChoice" name="ID_CHOICE5" variable="c_bootloader" member="yes">
+														<handler function="Onc_bootloaderSelect" entry="EVT_CHOICE" />
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+												</object>
+											</object>
+											<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+										</object>
+									</object>
+									<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBoxSizer" variable="BoxSizer30" member="no">
+										<orient>wxVERTICAL</orient>
+										<object class="sizeritem">
+											<object class="wxBoxSizer" variable="BoxSizer32" member="no">
+												<object class="sizeritem">
+													<object class="wxBoxSizer" variable="BoxSizer33" member="no">
+														<orient>wxVERTICAL</orient>
+														<object class="sizeritem">
+															<object class="wxStaticText" name="ID_STATICTEXT25" variable="StaticText25" member="yes">
+																<label>Description:</label>
+																<font>
+																	<size>10</size>
+																	<style>normal</style>
+																	<weight>bold</weight>
+																	<underlined>0</underlined>
+																	<family>swiss</family>
+																</font>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+															<border>5</border>
+														</object>
+														<object class="sizeritem">
+															<object class="wxHtmlWindow" name="ID_HTMLWINDOW2" variable="html_description_bootloader" member="yes">
+																<htmlcode>Bootloader description</htmlcode>
+																<borders>1</borders>
+																<size>360,250</size>
+																<style>wxHW_SCROLLBAR_AUTO|wxSIMPLE_BORDER</style>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+															<border>5</border>
+														</object>
+													</object>
+													<flag>wxALL|wxALIGN_LEFT|wxALIGN_TOP</flag>
+												</object>
+												<object class="sizeritem">
+													<object class="wxBoxSizer" variable="BoxSizer34" member="no">
+														<orient>wxVERTICAL</orient>
+														<object class="sizeritem">
+															<object class="wxStaticText" name="ID_STATICTEXT26" variable="StaticText26" member="yes">
+																<label>Log:</label>
+																<font>
+																	<size>10</size>
+																	<style>normal</style>
+																	<weight>bold</weight>
+																	<underlined>0</underlined>
+																	<family>swiss</family>
+																</font>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+															<border>5</border>
+														</object>
+														<object class="sizeritem">
+															<object class="wxListBox" name="ID_LISTBOX2" variable="m_lbox_bootloader" member="yes">
+																<default>-1</default>
+																<size>360,250</size>
+																<style>wxLB_HSCROLL</style>
+															</object>
+															<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+															<border>5</border>
+															<option>1</option>
+														</object>
+													</object>
+													<flag>wxALL|wxALIGN_LEFT|wxALIGN_TOP</flag>
+												</object>
+											</object>
+											<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+										</object>
+										<object class="sizeritem">
+											<object class="wxBoxSizer" variable="BoxSizer31" member="no">
+												<object class="sizeritem">
+													<object class="wxButton" name="ID_BUTTON8" variable="b_source_bootloader" member="yes">
+														<label>Edit source</label>
+														<enabled>0</enabled>
+														<handler function="Onb_source_bootloaderClick" entry="EVT_BUTTON" />
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+												</object>
+												<object class="sizeritem">
+													<object class="wxButton" name="ID_BUTTON9" variable="b_make_bootloader" member="yes">
+														<label>Make</label>
+														<enabled>0</enabled>
+														<handler function="Onb_make_bootloaderClick" entry="EVT_BUTTON" />
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+												</object>
+												<object class="sizeritem">
+													<object class="wxButton" name="ID_BUTTON10" variable="b_clean_bootloader" member="yes">
+														<label>Clean</label>
+														<enabled>0</enabled>
+														<handler function="Onb_clean_bootloaderClick" entry="EVT_BUTTON" />
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+												</object>
+												<object class="spacer">
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>1</border>
+													<size>4,20</size>
+												</object>
+												<object class="sizeritem">
+													<object class="wxButton" name="ID_BUTTON11" variable="b_info_bootloader" member="yes">
+														<label>More information</label>
+														<handler function="Onb_infoClick" entry="EVT_BUTTON" />
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+												</object>
+												<object class="spacer">
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+													<option>1</option>
+													<size>276,20</size>
+												</object>
+												<object class="sizeritem">
+													<object class="wxButton" name="ID_BUTTON12" variable="b_program_bootloader" member="yes">
+														<label>Program</label>
+														<enabled>0</enabled>
+														<fg>wxSYS_COLOUR_HIGHLIGHTTEXT</fg>
+														<bg>wxSYS_COLOUR_3DDKSHADOW</bg>
+														<tooltip>will take you to avrdude panel</tooltip>
+														<help>will take you to avrdude panel</help>
+														<handler function="Onb_program_bootloaderClick" entry="EVT_BUTTON" />
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>5</border>
+												</object>
+											</object>
+											<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+										</object>
+									</object>
+									<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+								</object>
+							</object>
+						</object>
+					</object>
+					<label>   bootloader   </label>
+				</object>
+			</object>
+		</object>
+		<object class="wxToolBar" name="ID_TOOLBAR1" variable="ToolBar1" member="yes">
+			<style>wxTB_HORIZONTAL|wxTB_TEXT|wxNO_BORDER</style>
+			<object class="tool" name="tb_submit" variable="tbi_share" member="yes">
+				<label>Share your project</label>
+				<bitmap stock_id="wxART_NEW" />
+				<bitmap2 stock_id="wxART_NEW" />
+				<tooltip>Share your project</tooltip>
+				<handler function="Ontb_shareClicked" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="tb_update" variable="tbi_update" member="yes">
+				<label>Update</label>
+				<bitmap stock_id="wxART_REDO" />
+				<bitmap2 stock_id="wxART_REDO" />
+				<tooltip>Check for update</tooltip>
+				<handler function="Ontb_updateClicked" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="tb_help" variable="tbi_help" member="yes">
+				<label>Help</label>
+				<bitmap stock_id="wxART_HELP_SIDE_PANEL" />
+				<bitmap2 stock_id="wxART_HELP_SIDE_PANEL" />
+				<tooltip>Help (www)</tooltip>
+				<handler function="Ontb_helpClicked" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="tb_quit" variable="tbi_quit" member="yes">
+				<label>Quit</label>
+				<bitmap stock_id="wxART_QUIT" />
+				<bitmap2 stock_id="wxART_QUIT" />
+				<tooltip>Cheers</tooltip>
+				<handler function="OnQuit" entry="EVT_TOOL" />
+			</object>
+		</object>
+		<object class="wxFileDialog" variable="FileDialog1" member="yes">
+			<message>Select file</message>
+		</object>
+	</object>
+</wxsmith>

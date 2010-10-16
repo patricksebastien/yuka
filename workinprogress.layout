@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Release" />
+	<File name="resource.rc" open="0" top="0" tabpos="0">
+		<Cursor position="56" topLine="0" />
+	</File>
+	<File name="workinprogressApp.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="593" topLine="0" />
+	</File>
+	<File name="workinprogressMain.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="9282" topLine="197" />
+	</File>
+	<File name="workinprogressMain.h" open="1" top="0" tabpos="2">
+		<Cursor position="4145" topLine="115" />
+	</File>
+	<File name="wx_pch.h" open="0" top="0" tabpos="0">
+		<Cursor position="454" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>
