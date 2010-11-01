@@ -1,9 +1,9 @@
 /***************************************************************
  * Name:      workinprogressMain.h
  * Purpose:   Defines Application Frame
- * Author:    Patrick Sébastien (patrick@11h11.com)
+ * Author:    Patrick SÃ©bastien (patrick@11h11.com)
  * Created:   2010-10-11
- * Copyright: Patrick Sébastien (www.workinprogress.ca)
+ * Copyright: Patrick SÃ©bastien (www.workinprogress.ca)
  * License:
  **************************************************************/
 
@@ -38,6 +38,7 @@
 #include <wx/wfstream.h>
 #include <wx/txtstrm.h>
 #include <wx/regex.h>
+#include <wx/stdpaths.h>
 
 //ETHERNET
 #define PROGMEM_SIZE    61440 // 4096-bytes reserve for bootloader
@@ -117,8 +118,8 @@ class workinprogressFrame: public wxFrame
 
         //(*Identifiers(workinprogressFrame)
         static const long ID_STATICTEXT37;
-        static const long ID_HTMLWINDOW3;
         static const long ID_STATICBITMAP1;
+        static const long ID_HTMLWINDOW3;
         static const long ID_PANEL8;
         static const long ID_PANEL2;
         static const long ID_TEXTCTRL10;
@@ -151,8 +152,6 @@ class workinprogressFrame: public wxFrame
         static const long ID_BUTTON15;
         static const long ID_PANEL16;
         static const long ID_PANEL3;
-        static const long ID_STATICTEXT1;
-        static const long ID_STATICTEXT18;
         static const long ID_STATICTEXT2;
         static const long ID_TEXTCTRL1;
         static const long ID_STATICTEXT3;
@@ -163,8 +162,6 @@ class workinprogressFrame: public wxFrame
         static const long ID_TEXTCTRL4;
         static const long ID_PANEL11;
         static const long ID_PANEL5;
-        static const long ID_STATICTEXT14;
-        static const long ID_STATICTEXT19;
         static const long ID_STATICTEXT15;
         static const long ID_TEXTCTRL6;
         static const long ID_STATICTEXT16;
@@ -173,10 +170,9 @@ class workinprogressFrame: public wxFrame
         static const long ID_TEXTCTRL8;
         static const long ID_PANEL12;
         static const long ID_PANEL10;
-        static const long ID_STATICTEXT13;
-        static const long ID_STATICTEXT20;
-        static const long ID_PANEL14;
         static const long ID_STATICTEXT35;
+        static const long ID_CHECKBOX6;
+        static const long ID_PANEL14;
         static const long ID_PANEL13;
         static const long ID_NOTEBOOK_FIRM;
         static const long ID_STATICTEXT6;
@@ -236,30 +232,26 @@ class workinprogressFrame: public wxFrame
         wxHtmlWindow* html_description;
         wxStaticText* StaticText9;
         wxCheckBox* cb_e;
-        wxStaticText* StaticText20;
+        wxToolBarToolBase* ToolBarItem4;
         wxStaticText* st_note;
         wxTextCtrl* tc_local_port;
         wxPanel* Panel5;
         wxToolBar* ToolBar1;
-        wxToolBarToolBase* tbi_quit;
         wxPanel* pl_avrdude;
         wxButton* b_ad_eeprom;
-        wxToolBarToolBase* tbi_share;
         wxTextCtrl* tc_file;
         wxStaticText* StaticText29;
         wxListBox* m_lbox_ad;
+        wxToolBarToolBase* ToolBarItem3;
         wxTextCtrl* tc_high;
         wxListBox* m_lbox_bootloader;
-        wxStaticText* StaticText13;
         wxStaticText* StaticText33;
         wxStaticText* StaticText2;
         wxPanel* Panel4;
-        wxStaticText* StaticText14;
         wxStaticText* StaticText30;
         wxButton* b_open;
         wxTextCtrl* tc_file_bootloader;
         wxChoice* c_ad_device;
-        wxToolBarToolBase* tbi_update;
         wxStaticText* StaticText26;
         wxStaticText* StaticText6;
         wxPanel* pn_usb;
@@ -271,20 +263,17 @@ class workinprogressFrame: public wxFrame
         wxPanel* pl_welcome;
         wxButton* b_info_bootloader;
         wxButton* b_make;
-        wxStaticText* StaticText19;
         wxStaticText* StaticText32;
         wxStaticText* StaticText8;
         wxStaticText* StaticText11;
         wxPanel* pl_bootloader;
         wxButton* b_ad_flash;
-        wxStaticText* StaticText18;
         wxChoice* c_ad_port;
         wxCheckBox* cb_restart;
         wxPanel* Panel1;
         wxStaticText* StaticText31;
         wxNotebook* nb_main;
         wxButton* b_fuses;
-        wxStaticText* StaticText1;
         wxCheckBox* cb_bootloader;
         wxStaticText* StaticText27;
         wxFileDialog* FileDialog1;
@@ -303,6 +292,7 @@ class workinprogressFrame: public wxFrame
         wxStaticText* StaticText23;
         wxStaticText* StaticText24;
         wxPanel* pn_ethernet;
+        wxToolBarToolBase* ToolBarItem1;
         wxButton* b_open_bootloader;
         wxChoice* c_category;
         wxButton* b_fuse_calculator;
@@ -323,7 +313,6 @@ class workinprogressFrame: public wxFrame
         wxButton* b_info;
         wxStaticText* StaticText15;
         wxStaticText* StaticText12;
-        wxToolBarToolBase* tbi_help;
         wxStaticText* StaticText35;
         wxTextCtrl* tc_ad_eeprom;
         wxCheckBox* cb_v;
@@ -339,6 +328,8 @@ class workinprogressFrame: public wxFrame
         wxChoice* c_firmware;
         wxButton* b_ad_execute;
         wxPanel* pl_firmware;
+        wxCheckBox* cb_asp;
+        wxToolBarToolBase* ToolBarItem2;
         wxStaticText* StaticText16;
         wxChoice* c_bootloader;
         wxPanel* fm_panel;
@@ -347,11 +338,14 @@ class workinprogressFrame: public wxFrame
         //*)
 
         //CUSTOM
+        wxString GetCurrentWorkingDirectory();
         wxString g_application_dir;
+        wxString avrdudepath;
         void ShowOutput(const wxString& cmd, const wxArrayString& output, const wxString& title, wxListBox* box);
         wxString g_help;
         DeviceHash device;
         void buildcommand();
+        wxString PathGTK(wxString thepath);
 
         //AVAILABLE FIRMWARE
         wxString g_microcontroller;
